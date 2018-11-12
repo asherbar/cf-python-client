@@ -65,9 +65,9 @@ class EntityManager(object):
                 url_requested = '%s%s' % (self.target_endpoint, response_json['next_url'])
                 response = self.client.get(url_requested)
 
-    def _create(self, data):
+    def _create(self, data, **kwargs):
         url = '%s%s' % (self.target_endpoint, self.entity_uri)
-        response = self.client.post(url, json=data)
+        response = self.client.post(url, json=data, **kwargs)
         _logger.debug('POST - %s - %s', url, response.text)
         return self._read_response(response)
 

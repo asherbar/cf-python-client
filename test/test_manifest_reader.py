@@ -1,6 +1,6 @@
 import unittest
 
-from cloudfoundry_client.operations.validation.manifest import ManifestReader
+from cloudfoundry_client.operations.push.validation.manifest import ManifestReader
 
 
 class TestManifestReader(unittest.TestCase):
